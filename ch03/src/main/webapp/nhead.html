@@ -21,15 +21,6 @@ body {
 .header .logo {
 	float: left;
 }
-.header .search-box {
-
-	float: right;
-	position: relative;
-	
-	right: 50px;
-	top: 10px;
-	
-}
 
 .header .logo {
 	width: 222px;
@@ -37,65 +28,103 @@ body {
 	font-size: 0;
 	overflow: hidden;
 	background: url('/ch03/images/naver-Img.png') no-repeat 0 -158px / 442px 428px;
+	 
+}
+
+.header .search-box {
+	float: right;
+	position: relative;
 	
-	margin: 0px 15px 0px 0px; 
+	border: 2px solid #19ce60;
+	
+	width: 582px;
+    height: 52px;
+    
+	right: 30px;
+	top: 10px;
+	
 }
 
 .search-box a, .search-box input {
 	display: block;
 	float: left;
 }
-.search-box .btn-search button { 
-	display: block;
-	float: right;
-}
+
 .search-box input {
-	border: 2px solid #19ce60;
+	
+	border: 0;
 	height: 42px;
 	width: 542px;	
 	
 }
-.search-box #drop-down-icon,  .search-box #keyboard-icon {
-	position: relative;
+
+.search-box #drop-down {
+	position: absolute;
+	
+	height: 100%;
+	width:22px;
+	right: 64px;
+	top: 0;
+	
 }
 
-.search-box #keyboard-icon { 
+.search-box #keyboard {
+	position: absolute;
+
+	height: 100%;
+	width: 36px;
+	right: 84px;
+	top: 0;
+	
+}
+
+.search-box #keyboard-icon {
+	display: inline-block; 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
 	width: 20px;
 	height: 12px;
-		
+	margin: -6px 0 0 -10px;	
+	
 	font-size: 0;
 	overflow: hidden;
-	background: url('/ch03/images/naver-Img.png') no-repeat -398px -267px / 442px 428px;
-	
-	right: 50px;
-	top: 15px;	
+	background: url('/ch03/images/naver-Img.png') no-repeat -398px -267px / 442px 428px;	
 }
 .search-box #drop-down-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
 	width: 10px;
 	height: 5px;
+	margin: -2px 0 0 -5px;	
 	
 	background: url('/ch03/images/naver-Img.png') no-repeat -158px -151px / 442px 428px;
 	
 	font-size: 0;
-	overflow: hidden;
-	
-	right: 45px;
-	top: 20px;	 
+	overflow: hidden; 
 }
 
-.search-box .btn-search {
+.search-box .btn-search {			/* 돋보기 박스 */ 
 	position: absolute;
-	padding: 10px;
+	border: 0;
+	width: 56px;
 	background-color: #19ce60;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	
+	cursor: pointer;
+	
 }
-.search-box .btn-search button { 
-	border: 0;
+.search-box .btn-search #btn-search-text {		/* 돋보기 아이콘 */
+	
+	display: inline-block;
 	width: 22px;
 	height: 22px;
+	
 	font-size: 0;
 	overflow: hidden;
 	background: #19ce60 url('/ch03/images/naver-Img.png') no-repeat -420px -24px / 442px 428px;
@@ -108,12 +137,18 @@ body {
 		<h1 class="logo">네이버</h1>
 		<div class="search-box">
 			<input type="text" />
-			<a href="#" id="keyboard-icon">키보드</a>
-			<a href="#" id="drop-down-icon">드롭다운</a>
+			<a href="#" id="keyboard">
+				<span id="keyboard-icon">키보드</span>
+			</a>
+			<a href="#" id="drop-down">
+				<span id="drop-down-icon">드롭다운</span>
+			</a>
 			
-			<div class="btn-search">
-				<button>검색</button>
-			</div>
+			<button class="btn-search">
+				<span id="btn-search-text">검색</span>
+				<span id="btn"></span>
+			</button>
+			
 		</div>
 	</div>
 </body>
