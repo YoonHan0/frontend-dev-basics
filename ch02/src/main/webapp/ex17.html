@@ -35,28 +35,21 @@
 </style>
 
 <script>
-
 	function focused(element) {
 		element.className = "focused";
-		console.log(element.className);
+		console.log(element);
 	}
 	
 	function blured(element) {
 		element.className = "";
-		console.log(element.className);
+		console.log(element);
 	}
 </script>
 </head>
 
 <body>
 	<form>
-		<input
-			type="text" 
-			onfocus='focused(this)'
-			onblur="blured(this)"
-			value="" 
-			placeholder="이메일"
-			>
+		<input type="text" onfocus='focused(this)' onblur="blured(this)" value=""  placeholder="이메일">
 			
 		<input type="password" value="" placeholder="비밀번호">
 	</form>
