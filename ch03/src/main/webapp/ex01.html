@@ -1,37 +1,75 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>마진과 패딩</title>
-<style type="text/css">
-body {
-	font-family: "돋움", "맑은 고딕";
-	font-size: 0.8em;
-	color: #333;
-}
-
-.box1 {
-	border: 1px solid #666;
-	width: 300px;
-	background-color: #FFC;
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>마진과 패딩</title>
+	<style type="text/css">
+	body {
+		font-family: "돋움", "맑은 고딕";
+		font-size: 0.8em;
+		color: #333;
+	}
+	
+	.box1 {
+		border: 1px solid #666;
+		width: 300px;
+		background-color: #FFC;
+			
+		padding-top: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
 		
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
+		padding: 10px 20px 30px 40px;		/* Top Right Bottom Left => 시계 방향 */
+		padding: 10px 20px 30px;			/* T, (R, L), B */
+		padding: 10px 20px;					/* (T, B), (R, L) */
+		
+		margin: 100px;						/* ex) -10px, 를 하게 되면 화면 밖으로 넘어감, 잘려서 출력됨 */
+		margin: 30px auto;
+	}
+	</style>
+
+	<script>
+		/* function clickDiv() {
+			let elDiv = document.getElementById("myBox");
+			console.log(elDiv);	
+		} */
+		const f = () => {
+			// let elDiv = document.getElementById("myBox");
+			console.log("Time Out!!!");	
+		} 
+		
+		window.onload = () => {
+			let elDiv = document.getElementById("myBox");
+			
+			/* elDiv.onclick = () => {
+				setTimeout(f, 1000);
+				console.log("으액");
+			} */
+			elDiv.onclick = function() {			// function 대신에 arrow함수 쓰니까 this의 값이 달라짐(window로 this가 잡힘) 
+				
+				console.log(this);
+				let marginTop = parseInt(this.style.marginTop);
+				console.log(marginTop);
+				
+				let intervalId = setInterval(() => {
+					if(marginTop <= -80) {
+						clearInterval(intervalId);
+						return;
+					}
+					marginTop -= 10;
+					elDiv.style.marginTop = marginTop + "px";
+					console.log("marginTop: " + marginTop);
+					
+				}, 1000);
+			}
+		}
 	
-	padding: 10px 20px 30px 40px;		/* Top Right Bottom Left => 시계 방향 */
-	padding: 10px 20px 30px;			/* T, (R, L), B */
-	padding: 10px 20px;					/* (T, B), (R, L) */
-	
-	margin: 100px;						/* ex) -10px, 를 하게 되면 화면 밖으로 넘어감, 잘려서 출력됨 */
-	margin: 30px auto;
-}
-</style>
+	</script>
 </head>
 
 <body>
-	<div class="box1" style="margin-top: -10px">
+	<div id="myBox" class="box1" style="margin: 100px auto">
 		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
 	</div>
 </body>
