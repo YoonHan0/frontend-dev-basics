@@ -12,17 +12,23 @@ body {
 }
 
 .header {
-	display: flex;
-	align-items: center;
-	width: 830px;
+	
+	width: 850px;
 	height: 100px;
 	margin: 50px auto;
-	
-	background-color: #ddd;
 }
 
-.header .logo, .header .search-box {
+.header .logo {
 	float: left;
+}
+.header .search-box {
+
+	float: right;
+	position: relative;
+	
+	right: 50px;
+	top: 10px;
+	
 }
 
 .header .logo {
@@ -34,25 +40,66 @@ body {
 	
 	margin: 0px 15px 0px 0px; 
 }
-.search-box {
-	display: flex;
-	
-	align-items: center;
-	
-}
-.search-box a, .search-box input, .search-box .btn-search button {
+
+.search-box a, .search-box input {
 	display: block;
+	float: left;
+}
+.search-box .btn-search button { 
+	display: block;
+	float: right;
 }
 .search-box input {
+	border: 2px solid #19ce60;
+	height: 42px;
+	width: 542px;	
 	
-	height: 35px;
-	width: 400px;	
 }
 .search-box #drop-down-icon,  .search-box #keyboard-icon {
 	position: relative;
 }
-.search-box #drop-down-icon { right: 85px; }
-.search-box #keyboard-icon { right: 80px; }
+
+.search-box #keyboard-icon { 
+	width: 20px;
+	height: 12px;
+		
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/naver-Img.png') no-repeat -398px -267px / 442px 428px;
+	
+	right: 50px;
+	top: 15px;	
+}
+.search-box #drop-down-icon {
+	width: 10px;
+	height: 5px;
+	
+	background: url('/ch03/images/naver-Img.png') no-repeat -158px -151px / 442px 428px;
+	
+	font-size: 0;
+	overflow: hidden;
+	
+	right: 45px;
+	top: 20px;	 
+}
+
+.search-box .btn-search {
+	position: absolute;
+	padding: 10px;
+	background-color: #19ce60;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	
+}
+.search-box .btn-search button { 
+	border: 0;
+	width: 22px;
+	height: 22px;
+	font-size: 0;
+	overflow: hidden;
+	background: #19ce60 url('/ch03/images/naver-Img.png') no-repeat -420px -24px / 442px 428px;
+}
 
 </style>
 </head>
@@ -61,8 +108,8 @@ body {
 		<h1 class="logo">네이버</h1>
 		<div class="search-box">
 			<input type="text" />
-			<a href="#" id="drop-down-icon">드롭다운</a>
 			<a href="#" id="keyboard-icon">키보드</a>
+			<a href="#" id="drop-down-icon">드롭다운</a>
 			
 			<div class="btn-search">
 				<button>검색</button>
