@@ -12,12 +12,12 @@ p {
 }
 
 p.text1 {
-	text-indent:15px;	
+	text-indent:15px;			/* 들여쓰기 */
 }
 
 
 p.text1 .under {
-	text-decoration:underline;
+	text-decoration:underline;	/* 밑 줄 */
 }
 
 p.text1 .over {
@@ -28,8 +28,8 @@ p.text2 span {
 	text-decoration:line-through;
 }
 
-.vertical {
-	vertical-align:super;
+.vertical {				/* table태그 안에 있는 <td>, list tag에서 사용 가능 */
+	vertical-align:super;	/* cm^2를 표시하고 있음 */
 	font-size:9px;	
 }
 
@@ -47,6 +47,19 @@ p.word_space {
 	word-spacing:10px;
 }
 
+/* ellipsis (= ...) */
+p.text3 {
+	height: 20px;
+	width: 100px;			/* 1. 텍스트를 가지고 있는 element의 너비 */
+	border: 1px solid #999;
+	
+	white-space: nowrap;	/* 2. 줄바꿈 금지 - 한 줄로만 나오게 처리, x축 overflow로 바꾸기 */
+	overflow-x: hidden;		/* 3. 글자 길이가 너비를 넘어 가는 경우, 보이지 않게 처리 */
+	
+	cursor: pointer;
+	
+	text-overflow: ellipsis;	/* 텍스트 overflow시 ... 출력되게 */
+}
 
 </style>
 </head>
@@ -63,6 +76,8 @@ p.word_space {
 <p class="up">영문자는 abc 로 시작됩니다.</p>
 <p>면적을 나타내는 단위는 cm<span class="vertical">2</span>, m<span class="vertical">2</span>, km<span class="vertical">2</span> 등이 있습니다.</p>
 <p class="word_space"> 단어와 단어 사이의 간격을 조절합니다.</p>
+
+<p class="text3" title="대문자는 abc 로 시작됩니다.">대문자는 abc 로 시작됩니다.</p>	<!-- title의 용도, 마우스를 가져댔을 때 title의 내용이 출력됨 -->
 
 </body>
 </html>
