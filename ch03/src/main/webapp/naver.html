@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NAVER</title>
+<style type="text/css">
+* { margin:0; padding:0 }
+body {
+	font-family: "맑은 고딕", 돋움;
+	font-size: 12px;
+	color: #333;
+}
+
+.header {
+    position: relative;
+    width: 1130px;
+    height: 160px;
+    margin: 0 auto;
+}
+.header .logo, .header .search-box {
+    display: block;
+}
+.header .logo {
+    position: absolute;
+    top: 50%;
+    left: -9px;
+    margin-top: -32px;
+
+	width: 222px;
+	height: 52px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('./images/naver-Img.png') no-repeat 0 -158px / 442px 428px;
+	 
+}
+
+.header .search-box {
+    position: absolute;
+    top: 50%;
+    left: 238px;
+    margin-top: -28px;
+}
+.search-box .search-box-main {
+    position: relative;
+
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+    border-radius: 2px;
+}
+
+.search-box .search-box-main input[type='text'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 444px;
+    height: 26px;
+    padding: 13px 15px;
+    
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 700;
+    outline: 0;
+    border: none;
+}
+.search-box .search-box-main .btn-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    background-color: #19ce60;
+    
+    
+    cursor: pointer;
+
+    border: none;
+}
+
+.search-box #keyboard {
+    position: absolute;
+    top: 0;
+    right: 84px;
+    bottom: 0;
+    width: 36px;
+}
+
+.search-box #drop-down {
+    position: absolute;
+    top: 0;
+    right: 64px;
+    bottom: 0;
+    width: 22px;
+}
+.search-box #keyboard-icon {
+	display: inline-block; 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	width: 20px;
+	height: 12px;
+	margin: -6px 0 0 -10px;	
+	
+	font-size: 0;
+	overflow: hidden;
+	background: url('./images/naver-Img.png') no-repeat -398px -267px / 442px 428px;	
+}
+.search-box #drop-down-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	width: 10px;
+	height: 5px;
+	margin: -2px 0 0 -5px;	
+	
+	background: url('./images/naver-Img.png') no-repeat -158px -151px / 442px 428px;
+	
+	font-size: 0;
+	overflow: hidden; 
+}
+
+.search-box .btn-search #btn-search-text {		/* 돋보기 아이콘 */
+	
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	
+	font-size: 0;
+	overflow: hidden;
+	background: #19ce60 url('./images/naver-Img.png') no-repeat -420px -24px / 442px 428px;
+    vertical-align: top;
+}
+
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 class="logo">네이버</h1>
+		<div class="search-box">
+            <div class="search-box-main">
+                <input type="text" />
+                <button class="btn-search">
+                    <span id="btn-search-text">검색</span>
+                    <span id="btn"></span>
+                </button>
+            </div>
+			
+			<a href="#" id="keyboard">
+				<span id="keyboard-icon">키보드</span>
+			</a>
+			<a href="#" id="drop-down">
+				<span id="drop-down-icon">드롭다운</span>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
