@@ -17,7 +17,7 @@
             Array()     => object 타입의 객체
             Date()      => object 타입의 객체
             RegExp()    => object 타입의 객체
-            Function()  => function 타입의 객체
+            Function()  => function 타입의 객체 **
 
         2. {}
         3. []
@@ -42,13 +42,21 @@ var b2 = new Boolean(true);
 var o = new Object();
 var a = new Array();
 var d = new Date();
+var o2 = {};
+var a2 = [];
+var n = null;
 
-console.log(i2 + ":" + typeof(i2));
-console.log(s2 + ":" + typeof(s2));
-console.log(b2 + ":" + typeof(b2));
-console.log(o + ":" + typeof(o));
-console.log(a + ":" + typeof(a));
-console.log(d + ":" + typeof(d));
+console.log(i2 + ":" + typeof(i2) + " : " + (i2 instanceof(Number)));
+console.log(s2 + ":" + typeof(s2) + " : " + (s2 instanceof(String)));
+console.log(b2 + ":" + typeof(b2) + " : " + (b2 instanceof(Boolean)));
+console.log(o + ":" + typeof(o) + " : " + (o instanceof(Object)));
+console.log(a + ":" + typeof(a) + " : " + (a instanceof(Array)));
+console.log(d + ":" + typeof(d) + " : " + (d instanceof(Date)));
+
+console.log("\n===== 잠깐 쉬고 =====");
+console.log(o2 + ":" + typeof(o2) + " : " + (o2 instanceof(Object)));
+console.log(a2 + ":" + typeof(a2) + " : " + (a2 instanceof(Array)));
+console.log(n + ":" + typeof(n));
 
 /* 생성자 함수 예시
 function Student(name) {        // 생성자 함수는 대게 이렇게 정의되어 있다!
@@ -61,4 +69,21 @@ console.log(typeof(o));
 // var a = 10;
 // console.log(`a의 값은 ${a}이다.`);       // ""와 ''의 차이는 없음 -> 구글은 ''를 더 선호한다카더라~
 
+console.log("\n======= 객체타입(function) =======");
+function f1(a, b) {
+    return a + b;
+}
 
+var f2 = function(a, b) {
+    return a + b;
+}
+
+var f3 = new Function("a", "b", "return a + b");
+console.log(f1(10, 20), f2(10, 20), f3(10, 20));
+console.log("f1:", typeof(f1));
+console.log("f2:", typeof(f2));
+console.log("f3", typeof(f3));
+
+console.log("\n======= 원시 타입도 메소드를 호출할 수 있다.(유사 객체) =======");
+console.log(b2.valueOf());
+console.log(b.valueOf());   // -> new Boolean(b).valueOf() 이렇게 임시 객체를 만들어서 실행됨
