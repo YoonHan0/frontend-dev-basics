@@ -7,7 +7,7 @@
     - string
     - boolean
 
-    [객체] | object 타입을 리턴하면 object 형태로, {}도 리턴하면 ㅇㅇ, [] 역시 ㅇㅇ, null도 타입 리턴하면 object
+    [객체***] | object 타입을 리턴하면 object 형태로, {}도 리턴하면 ㅇㅇ, [] 역시 ㅇㅇ, null도 타입 리턴하면 object
     - object
         1. new 생성자함수() 사용해서 생성 | new Number() 하면 object 타입의 객체가 나온다~
             Number()    => object 타입의 객체
