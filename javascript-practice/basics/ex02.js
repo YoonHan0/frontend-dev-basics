@@ -1,5 +1,5 @@
 /* 
-    변수와 자형(Data Type)
+    변수와 자료형(Data Type)
 
     [기본타입(Primitive Type)]
     - undefined
@@ -23,6 +23,23 @@
         3. []
         4. null
     -function
+*/
+
+/* 
+    자바스크립트 객체를 분류하는 또 다른 방법
+
+    1. 내장 객체
+        : JavaScript Engine 내부에 미리 내장(정의)되어 있는 객체
+        - Number, Boolean, Date, RegDate, Array, ..... : 생성자 함수
+        - parseInt, setTimeout, setInterval            : 일반 함수
+
+    2. 호스트 객체
+        : JavaScript Engine이 embed 되어 있는 호스트 환경에 있는 객체
+        - Browser가 호스트인 경우: screen, location, navigator, document(DOM), XmlHttpRequest
+        - Node가 호스트인 경우: http, os, fs, path, process, ...
+
+    3. 사용자 객체
+        : 자바스크립트 엔진이 실행하면서 생성하는 객체
 */
 console.log("\n======== 기본타입(undefined, number, string, boolean ========");
 var u = undefined;  // var u; -> 이 코드와 동일, JavaScript는 선언과 정의를 구분하지 않는다.
