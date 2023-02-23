@@ -11,6 +11,15 @@
 
 		setTimeout(function() {
 			var child = window.open("popup.html", "n-popup", "width=600, height=400");
+			setTimeout(function() {
+				// 자식 창의 내용 바꾸기
+				child.document.write("<h1>popup contents changed!!</h1>");	// 기존에 로딩되었던 문서가 변경된 것이 아니라 DOM이 변경됨, 메모리가 변경
+			}, 2000);
+			
+			setTimeout(function() {
+				// 자식 창 움직이기
+				child.moveTo(200, 200);
+			}, 4000);
 		}, 2000);
 	</script>
 </head>
