@@ -3,8 +3,8 @@
  * List 함수 
  */
 
-Array.prototype.remove = function(index){
-    this.splice(index, 1);
+Array.prototype.remove = function(index){      
+    this.splice(index, 1);          
 }
 
 Array.prototype.insert = function(index, value) {
@@ -16,12 +16,14 @@ Array.prototype.insert = function(index, value) {
         // 오류!!
         // 콜백 함수 안의 this는 어휘 상의 this와 일치하지 않는다.
         // value.forEach(function(e){
-        //     this.splice(index++, 0, e);
+        //     this.splice(index++, 0, e); // Object global
         // });
-
-        // 해결 방법1
-        // var _this = this;
-        // value.forEach(function(e) {
+        
+        //해결 방법1
+        // var _this = this;      // this를 지정해줌, Array의 this로 -> ex/a.insert이면 a배열의 this
+        // console.log("_this: " + _this);
+        // value.forEach(function(e) {     // value: ['a', 'b', 'c']
+        //     console.log("===== this: " + this);     // 여기서 this가 왜 global인지...
         //     _this.splice(index++, 0, e);
         // });
         
@@ -31,7 +33,7 @@ Array.prototype.insert = function(index, value) {
         // value: ['a', 'b', 'c'] / index: 2 / e(element): 'a', 'b', 'c'
         value.forEach(function(e) {
             this.splice(index++, 0, e);
-        }.bind(this));
+        }.bind(this));      
 
 
 
@@ -50,5 +52,5 @@ console.log(a);
 a.remove(2);
 console.log(a);
 
-a.insert(2, ['a', 'b', 'c']);
+a.insert(2, ['a', 'b', 'c']);       // a = [1, 2, 4]
 console.log(a);
