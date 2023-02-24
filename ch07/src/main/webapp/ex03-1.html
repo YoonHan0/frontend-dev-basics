@@ -5,8 +5,10 @@
 <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script>
 // $(function(){ ... }); === window.addEventListener('load', function() {...});
-	window.addEventListener('load', function() {
+	$(function() {
+		
 		var $obj = $(".par");
+		
 		$obj.click(function(){
 			console.log("clicked:" + this);
 		});
