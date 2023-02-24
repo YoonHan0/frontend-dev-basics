@@ -2,7 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>다중 이벤트 처리</title>
+
+<script>
+
+	var registerEventHandler = function(element, eventName, eventHandler) {
+		
+	}
+	
+	var clickEventHandler1 = function() {
+		console.log('Click 1');
+	}
+	var clickEventHandler2 = function() {
+		console.log('Click 2');
+	}
+	var clickEventHandler3 = function() {
+		console.log('Click 3');
+	}
+	var clickEventHandler4 = function() {
+		console.log('Click 4');
+	}
+	
+	window.addEventListener("load", function() {
+		var el = document.getElementById('header');
+		
+		// 다중 이벤트 핸들러 등록
+		el.addEventListener('click', clickEventHandler1);
+		el.addEventListener('click', clickEventHandler2);
+		
+		// DOM Event Lv.0도 함께 지원한다.
+		el.onclick = clickEventHandler3;
+		
+		// 제거
+		el.removeEventListener('click', clickEventHandler2);
+	});
+
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

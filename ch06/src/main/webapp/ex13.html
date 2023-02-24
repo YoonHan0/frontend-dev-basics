@@ -3,10 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+
+	/*
+	[기본 이벤트 동작 막기]
+	
+		1. anchor: 버튼이나 메뉴로 사용할 때
+		2. form: validation, ajax 방식의 submit
+	*/
+	window.addEventListener("load", function() {
+		document
+			.getElementById('btn-delete')
+			.addEventListener('click', function(event) {
+				console.log(event);		// type: click, x, y축: 화면 상에서의 위
+				event.preventDefault();	// event의 기본 기능을 막는 친구
+				console.log("비밀번호 입력 다이알로그 판업 띄우기!");
+			});
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
 	<h2>6. 기본(default) Event Hanlder 동작 막기 - 1. anchor</h2>	
-	<a href="" id="btn-delete">삭제</a>
+	<a href="#" id="btn-delete">삭제</a>
 </body>
 </html>

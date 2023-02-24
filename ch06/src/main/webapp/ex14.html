@@ -3,10 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+
+	window.addEventListener("load", function() {
+		document
+			.getElementById('input-submit')
+			.onclick = function() {
+				// return true;			// event.preventDefault(); === return false; / 동작 안 함
+				var inputEmail = document.getElementById('input-email');
+				if(inputEmail.value === '') {
+					alert('이메일을 입력하세요!');
+					inputEmail.focus();
+					console.log(" ..... ");
+					return false;
+				}
+				var inputPassword = document.getElementById('input-password');
+				if(inputPassword.value === '') {
+					alert('비밀번호를 입력하세요!');
+					inputPassword.focus();
+					console.log(" ..... ");
+					return false;
+				}
+				
+				return true;
+			};
+	});
+
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
-	<h2>6. 기본(default) Event Hanlder 동작 막기 - 2. form: DOM Event Model Level0</h2>
+	<h2>6. 기본(default) Event Hanlder 동작 막기 - 2. form: DOM Event Model Level.0</h2>
 	
 	<form id='form-login' method='post' action='/user/auth'>
 		<input type='text' name='email' id='input-email' placeholder='이메일'/>
@@ -15,7 +42,7 @@
 		<input type='password' name='password' id='input-password' placeholder='비밀번호'/>
 		<br/><br/>
 		
-		<input type='submit' value='로그인' />
+		<input type='submit' value='로그인' id='input-submit'/>
 	</form>
 </body>
 </html>
