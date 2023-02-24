@@ -4,11 +4,11 @@
 
 var url = "http://www.mysite.com/user?name=윤한영&email=yoon@gmail.com";
 
-// 1. escape: URL 전부를 encoding할 때
+// 1. escape: URL 전부를 encoding할 때(url에 있는 모든 데이터 encoding)
 var url2 = escape(url);
 console.log(url2);
 
-// 2. encodeURI: URL 중 파라미터만을 encoding 한다. url 전체를 encoding 해야 하는 경우에 사용
+// 2. encodeURI: URL 중 '파라미터만'을 encoding 한다. url 전체를 encoding 해야 하는 경우에 사용
 var url3 = encodeURI(url);
 console.log("\n" + url3);
 
