@@ -7,7 +7,37 @@
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="image-viewer.js"></script>
 <script>
-	imageViewer.init();
+	// imageViewer.init();
+	console.log("ggg");
+	$(function() {
+		$(".buttons #btn-change").click(function() {			// 이미지 변경 버튼
+			var changeImg = imageViewer._changeImage();		// name:	, file:
+			/* console.log(changeImg.name);
+			console.log(changeImg.file); */
+			
+			$('#showImage img')
+				.attr("src", "images/" + changeImg.file)
+				.attr("title", changeImg.name);
+		});
+		
+		$('.buttons #btn-slideshow').click(function() {
+			
+			var _this = this;		// this === <button id="btn-slideshow">슬라이드쇼 시작</button>
+			console.log($(_this).attr('id'));
+			var interval = setInterval(function() {
+				var changeImg = imageViewer._changeImage();		// name:	, file:
+				$('#showImage img')
+					.attr("src", "images/" + changeImg.file)
+					.attr("title", changeImg.name);
+				$(_this).attr('id').attr("id","btn-stop");
+			}, 500)
+		});
+		$('.buttons #btn-stop').click(function() {
+			clearInterval(interval);
+		});
+	})
+	
+
 </script>
 </head>
 <body>
@@ -16,8 +46,8 @@
 			<button id="btn-change">이미지변경</button>
 			<button id="btn-slideshow">슬라이드쇼 시작</button>
 		</div>
-		<div>
-			<img/>
+		<div id="showImage">
+			<img src="images/Penguins.jpg" title='펭귄'/>
 		</div>
 	</div>
 </body>
