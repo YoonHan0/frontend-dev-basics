@@ -6,9 +6,13 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("li[id]").css("color", "red");
+		$('li[class="second"]').css("color", "blue");
+		// $('li.second').css("color", "blue"); -> 같은 표현
 	}, 1000);
 });
 </script>
+<title>선택자 - 속성</title>
 </head>
 <body>
 	<h1>선택자 - 속성</h1>

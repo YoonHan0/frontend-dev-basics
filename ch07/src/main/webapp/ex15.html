@@ -6,9 +6,12 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("li:even").css("color", "red");		// 0부터 시작함
+		$("li:odd").css("color", "blue");		// 0부터 시작함
 	}, 1000);
 });
 </script>
+<title>선택자 - jQuery Filter(even, odd)</title>
 </head>
 <body>
 	<h1>선택자 - jQuery Filter(even, odd)</h1>

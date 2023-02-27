@@ -6,9 +6,12 @@
 <script>
 $(function(){
 	setTimeout(function(){
-	}, 1000);
+		$("ul li:first-child").css("color", "red");
+		$("ul li:last-child").css("color", "green");
+	}, 1000);	
 });
 </script>
+<title>선택자 - 첫번째 자식</title>
 </head>
 <body>
 	<h1>선택자 - 첫번째 자식</h1>
