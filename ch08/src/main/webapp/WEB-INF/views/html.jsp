@@ -6,24 +6,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>text.jsp</title>
+<title>Insert title here</title>
 <script src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
-
-	$(function() {
-		$('button').click(function() {
-			$('#data').load('${pageContext.request.contextPath }/api/html p');
+	$(function(){
+		$("button").click(function(){
+			$("#data").load("${pageContext.request.contextPath}/api/html h1");
 		});
 	})
-	
 </script>
 </head>
 <body>
-	
-	<h1>AJAX Test: HTML Format Data</h1>
+	<h1>AJAX Test: Text Format Data</h1>
 	
 	<button>데이터 가져오기</button>
 	<div id="data"></div>
-	
 </body>
 </html>
