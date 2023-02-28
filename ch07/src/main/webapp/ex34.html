@@ -22,6 +22,8 @@
 		
 		$('.buttons #btn-slideshow').click(function() {
 			
+			// if 아니면 interval 아니면 clearInterval(interval);
+			
 			var _this = this;		// this === <button id="btn-slideshow">슬라이드쇼 시작</button>
 			console.log($(_this).attr('id'));
 			var interval = setInterval(function() {
@@ -29,12 +31,9 @@
 				$('#showImage img')
 					.attr("src", "images/" + changeImg.file)
 					.attr("title", changeImg.name);
-				$(_this).attr('id').attr("id","btn-stop");
 			}, 500)
 		});
-		$('.buttons #btn-stop').click(function() {
-			clearInterval(interval);
-		});
+
 	})
 	
 
