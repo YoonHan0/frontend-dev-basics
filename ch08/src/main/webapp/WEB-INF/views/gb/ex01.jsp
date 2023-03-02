@@ -10,7 +10,7 @@
 <script src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
 
-	var render = function(vo) {
+	var render = function(vo, mode) {
 		var htmls = "";
 		htmls = ("<li data-no=''>" +
 				"<strong>" + vo.name + "</strong>" +
@@ -18,8 +18,8 @@
 				"<strong></strong>" +
 				"<a href='' data-no=''>삭제</a>" + 
 				"</li>");
+		$('#list-guestbook')[mode ? "prepend" : "append"](htmls);
 		
-		$('#list-guestbook').prepend(htmls);
 	}
 	
 	$(function() {
@@ -46,7 +46,7 @@
 						console.error(response.error);
 						return;
 					}
-					render(response.data);
+					render(response.data, true);
 				}
 			});
 		});

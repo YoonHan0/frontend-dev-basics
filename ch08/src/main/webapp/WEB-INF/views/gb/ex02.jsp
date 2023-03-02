@@ -25,9 +25,26 @@
 					console.error(response.error);
 					return;
 				}
-				// render(response.data);
+				console.log(response.data);
+				
+				response.data.forEach(function(vo) {
+					render(vo);
+				});
 			}
 		});
+	}
+	
+	var render = function(vo, mode) {
+		var htmls = "";
+		htmls = ("<li data-no='"+ vo.no + "'>" +
+				"<strong>" + vo.name + "</strong>" +
+				"<p>" + vo.message + "</p>" + 
+				"<strong></strong>" +
+				"<a href='' data-no='" + vo.no + "'>삭제</a>" + 
+				"</li>");
+		$('#list-guestbook')[mode ? "prepend" : "append"](htmls);
+		
+		// $lastLi.data("no");
 	}
 	
 	$(function() {
