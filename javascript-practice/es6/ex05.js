@@ -36,3 +36,21 @@ console.log("\n ========== \n ");
         process.stdout.write(`${el}: ${(x => x*x)(el)}\t`)
     }
 });
+
+console.log("\n ========== \n ");
+const dooly = {
+    name: '둘리',
+    friends: ['또치', '마이콜', '도우너', '길동'],
+    printFriends: function() {
+        // console.log(this); // === dooly객체
+
+        /* 같은 표현 */
+        // let _this = this;
+        // this.friends.forEach(function(f) {
+        //     console.log(`${_this.name}의 친구 ${f}`);    // 둘리의 친구 ~
+        // });
+        this.friends.forEach(f => console.log(`${this.name}의 친구 ${f}`));
+    }
+};
+
+dooly.printFriends();
