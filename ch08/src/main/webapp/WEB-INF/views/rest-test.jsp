@@ -30,6 +30,19 @@
 				}
 			})
 		});
+		
+		$('#read').click(function() {
+			$.ajax({
+				url: "${pageContext.request.contextPath }/api/user/10",
+				type: "get",
+				dataType:"json",
+				contentType: "json",
+				data: JSON.stringify(vo),
+				success: function(response) {
+					console.log(response);
+				}
+			})
+		});
 	});
 </script>
 </head>
