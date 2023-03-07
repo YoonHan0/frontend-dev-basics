@@ -28,15 +28,18 @@ myAsyncFn02("").catch(function(error) {
     console.error(error);
 });
 */
-
-/* 이렇게 한 번에 가능 */
-myAsyncFn02("data")
+if(require.main === module) {
+    /* 이렇게 한 번에 가능 */
+    myAsyncFn02("data")
     .then(function(error, result) {
         console.log(result);
     })
     .catch(function(error) {
         console.error(error);
     });
+    console.log("wait...");
+} else {
+    module.exports = myAsyncFn02;
+}
 
 
-console.log("wait...");
